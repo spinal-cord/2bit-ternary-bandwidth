@@ -1,0 +1,40 @@
+CPU: Apple M1
+OS: macOS
+Date (UTC): 2025-12-31 00:00:00 UTC+0000
+------------------------
+========================================================================
+2-Bit Ternary Encoding Memory Bandwidth Micro-Benchmark
+HyperFold Technologies UK Ltd.
+========================================================================
+
+Configuration:
+  Matrix Size:  11008 × 4096
+  Total Weights: 45088768
+  Sparsity:     50%
+  Iterations:   100
+  Profiling:    Time only (compile with -DUSE_PERF for counters)
+
+Memory Footprint:
+  8-bit representation: 44032 KB
+  2-bit representation: 11008 KB
+  Reduction:            75.0%
+
+Running Version A (8-bit)...
+Running Version B (2-bit packed)...
+
+========================================================================
+RESULTS
+========================================================================
+
+Metric                    |  8-bit (Theirs) |    2-bit (Ours) | Improvement
+------------------------------------------------------------------------
+Total Time                |     15108.95 ms |     16180.94 ms |      0.93x
+Memory Footprint (KB)     |           44032 |           11008 |      4.00x
+
+========================================================================
+CONCLUSION
+========================================================================
+
+Compile with -DUSE_PERF to measure hardware performance counters.
+Time improvement: 0.93x
+Memory reduction: 4.00x
